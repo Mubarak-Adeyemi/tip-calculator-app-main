@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tip Calculator to easily split bills and calculate tip per person."
+    />
+    <meta name="author" content="Mubarak Adeyemi" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-logo">
+        <img src="./images/logo.svg" alt="Header Logo" />
+      </div>
+    </header>
+
+    <main>
+      <section class="input-section">
+        <form action="" class="input-form">
+          <fieldset class="bill-sec">
+            <label for="bil" class="label">Bill</label>
+            <input
+              type="number"
+              id="bill"
+              class="bill-input"
+              aria-required="true"
+              aria-describedby="bill-error"
+              placeholder="Enter bill amount"
+              min="0"
+            />
+            <div class="error-msg bill" role="alert" aria-live="polite">
+              Please input a valid bill
+            </div>
+          </fieldset>
+
+          <fieldset class="tip-sec">
+            <legend class="label">Select Tip %</legend>
+            <div
+              class="tabs-group"
+              role="radiogroup"
+              aria-labelledby="tip-percentage"
+            >
+              <button
+                data-value="5"
+                class="tab"
+                aria-pressed="false"
+                aria-label="5% Tip"
+              >
+                5%
+              </button>
+              <button
+                data-value="10"
+                class="tab"
+                aria-pressed="false"
+                aria-label="10% Tip"
+              >
+                10%
+              </button>
+              <button
+                data-value="15"
+                class="tab"
+                aria-pressed="false"
+                aria-label="15% Tip"
+              >
+                15%
+              </button>
+              <button
+                data-value="25"
+                class="tab"
+                aria-pressed="false"
+                aria-label="25% Tip"
+              >
+                25%
+              </button>
+              <button
+                data-value="50"
+                class="tab"
+                aria-pressed="false"
+                aria-label="50% Tip"
+              >
+                50%
+              </button>
+              <input
+                type="number"
+                class="custom-tab input"
+                id="custom-tab"
+                placeholder="Custom"
+                aria-label="Custom Tip %"
+                min="0"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="people-sec">
+            <label for="People" class="label">Number of People</label>
+            <input
+              type="number"
+              id="people"
+              class="people-input"
+              placeholder="0"
+              aria-required="true"
+              aria-describedby="people-error"
+              aria-label="Number of People"
+            />
+            <div class="error-msg people">Can't be zero</div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="output-section">
+        <div class="result-container">
+          <div class="result">
+            <p class="result-label">
+              Tip Amount <span class="per-person">/ person</span>
+            </p>
+            <output id="tip-amount" aria-live="polite">$0.00</output>
+          </div>
+          <div class="result">
+            <p class="result-label">
+              Total <span class="per-person">/ person</span>
+            </p>
+            <output id="total-amount" aria-live="polite">$0.00</output>
+          </div>
+        </div>
+
+        <div class="reset-container">
+          <button id="reset-btn" class="reset-btn" aria-label="Reset">
+            RESET
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./scritps.js"></script>
+  </body>
+</html>

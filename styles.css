@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Variables */
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Background-cyan: hsl(172, 78%, 85%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+  --tomato-red: hsl(9, 100%, 64%);
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+}
+
+/* Body */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Background-cyan);
+  color: var(--Very-light-grayish-cyan);
+  font-size: 1rem;
+}
+
+header {
+  margin: 2rem 0;
+}
+
+/* Main Container */
+main {
+  background-color: var(--White);
+  width: 100%;
+  padding: 2rem;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Form Labels */
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--Very-dark-cyan);
+  font-weight: 600;
+}
+
+/* Fieldsets */
+fieldset {
+  margin-bottom: 1rem;
+  position: relative;
+  border: none;
+}
+
+/* Buttons, Custom Inputs */
+button,
+.custom-tab {
+  cursor: pointer;
+}
+
+input,
+.tabs-group .tab,
+.reset-btn {
+  font-size: 1.2rem;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Inputs */
+input,
+.reset-btn {
+  width: 100%;
+}
+
+input {
+  background-color: var(--Very-light-grayish-cyan);
+  text-align: right;
+  color: var(--Very-dark-cyan);
+}
+input:focus {
+  outline: 2px solid var(--Strong-cyan);
+  transition: outline 0.3s ease-in-out;
+}
+
+/* Tabs */
+.tabs-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+}
+
+.tabs-group .tab,
+.input {
+  width: calc(50% - 0.5rem);
+}
+
+.tabs-group .tab {
+  background-color: var(--Very-dark-cyan);
+  color: var(--Very-light-grayish-cyan);
+}
+
+.tabs-group .tab:hover,
+.reset-btn:hover {
+  background-color: var(--Background-cyan);
+  color: var(--Very-dark-cyan);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Styling Section */
+.people-sec {
+  margin-top: 1.5rem;
+}
+
+.output-section {
+  background-color: var(--Very-dark-cyan);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.per-person {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--Grayish-cyan);
+}
+
+output {
+  font-size: 1.5rem;
+  color: var(--Strong-cyan);
+  font-weight: 700;
+}
+
+/* Reset Button */
+.reset-btn {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+/* Input Icons */
+.bill-input {
+  background-image: url(./images/icon-dollar.svg);
+}
+
+.people-input {
+  background-image: url(./images/icon-person.svg);
+}
+
+.bill-input,
+.people-input {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-x: 1rem;
+}
+
+.tab.active {
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+}
+
+/* Error Handling */
+.error-msg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(0.8rem);
+  font-size: 0.8rem;
+  color: var(--tomato-red);
+  font-weight: 600;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.invalid {
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+.bill-input.invalid,
+.people-input.invalid {
+  border: solid 2px var(--tomato-red);
+}
+
+/* Media Queries */
+@media (min-width: 48em) {
+  body {
+    height: 100vh;
+    justify-content: center;
+  }
+  header {
+    margin-top: 0;
+  }
+  main {
+    width: 90%;
+    display: flex;
+    column-gap: 1rem;
+  }
+  section {
+    margin: 0;
+    width: 50%;
+  }
+  .output-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 56.25em) {
+  main {
+    width: 70%;
+    column-gap: 2rem;
+    border-radius: 1rem;
+  }
+  .tabs-group .tab,
+  .input {
+    width: calc(33% - 0.5rem);
+  }
+}
