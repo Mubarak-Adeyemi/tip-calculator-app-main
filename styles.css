@@ -19,7 +19,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 /* Body */
@@ -224,6 +224,9 @@ output {
   }
 }
 @media (min-width: 56.25em) {
+  * {
+    font-size: 18px;
+  }
   main {
     width: 70%;
     column-gap: 2rem;
@@ -232,5 +235,14 @@ output {
   .tabs-group .tab,
   .input {
     width: calc(33% - 0.5rem);
+  }
+}
+
+@media (min-width: 64.5em) {
+  * {
+    font-size: 20px;
+  }
+  output {
+    font-size: 2rem;
   }
 }
