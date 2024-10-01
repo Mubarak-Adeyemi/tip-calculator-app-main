@@ -19,7 +19,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Space Mono", monospace;
-  font-size: 16px;
 }
 
 /* Body */
@@ -29,7 +28,7 @@ body {
   align-items: center;
   background-color: var(--Background-cyan);
   color: var(--Very-light-grayish-cyan);
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 header {
@@ -50,6 +49,7 @@ main {
   margin-bottom: 0.5rem;
   color: var(--Very-dark-cyan);
   font-weight: 600;
+  font-size: 0.8rem;
 }
 
 /* Fieldsets */
@@ -68,7 +68,7 @@ button,
 input,
 .tabs-group .tab,
 .reset-btn {
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: none;
   padding: 0.5rem;
   border-radius: 8px;
@@ -133,11 +133,12 @@ input:focus {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 .per-person {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--Grayish-cyan);
 }
 
@@ -209,7 +210,7 @@ output {
     margin-top: 0;
   }
   main {
-    width: 90%;
+    width: 85%;
     display: flex;
     column-gap: 1rem;
   }
@@ -224,8 +225,8 @@ output {
   }
 }
 @media (min-width: 56.25em) {
-  * {
-    font-size: 18px;
+  body {
+    font-size: 20px;
   }
   main {
     width: 70%;
@@ -236,13 +237,7 @@ output {
   .input {
     width: calc(33% - 0.5rem);
   }
-}
-
-@media (min-width: 64.5em) {
-  * {
-    font-size: 20px;
-  }
   output {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
